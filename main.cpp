@@ -15,7 +15,7 @@ int16_t fastinterpolate(int16_t d1, int16_t d2, int16_t d3, int16_t d4, double x
            + d3 * (x_3  - 4000 * x_2   +  3000000  * x_1        )     / - 2000000000
            + d4 * (x_3  - 3000 * x_2   +  2000000  * x_1        )     /   6000000000;
 
-    #ifdef clip
+    #ifdef clip //just a reminder - clipping not working here due to result already returned
     int32_t untruncated = result;
     if (untruncated < -32768)
       return -32768;
